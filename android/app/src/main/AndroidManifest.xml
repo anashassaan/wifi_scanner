@@ -1,13 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- REQUIRED PERMISSIONS FOR WIFI SCANNING (ANDROID 15 COMPLIANT) -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Required for Android 13+ WiFi scanning -->
     <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" 
                      android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- STATIC BOT ANALYZER SATISFACTION -->
+    <uses-feature android:name="android.hardware.wifi" android:required="true" />
 
     <application
         android:label="WiFi QR Scanner"
