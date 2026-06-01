@@ -250,8 +250,11 @@ class _ResultScreenState extends State<ResultScreen> {
                         ),
                       )
                     : const Icon(Icons.wifi),
-                label: Text(
-                  _isConnecting ? 'Connecting...' : 'Connect to Network',
+                label: Flexible(
+                  child: Text(
+                    _isConnecting ? 'Connecting...' : 'Connect to Network',
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.primary,
@@ -274,7 +277,12 @@ class _ResultScreenState extends State<ResultScreen> {
                   );
                 },
                 icon: const Icon(Icons.copy),
-                label: const Text('Copy Password'),
+                label: const Flexible(
+                  child: Text(
+                    'Copy Password',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: 16),
@@ -283,7 +291,12 @@ class _ResultScreenState extends State<ResultScreen> {
               child: OutlinedButton.icon(
                 onPressed: () => context.pop(),
                 icon: const Icon(Icons.home),
-                label: const Text('Back to Home'),
+                label: const Flexible(
+                  child: Text(
+                    'Back to Home',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
             ),
           ],

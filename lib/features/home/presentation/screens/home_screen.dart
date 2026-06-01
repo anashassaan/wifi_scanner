@@ -69,7 +69,11 @@ class HomeScreen extends ConsumerWidget {
                       leading: const CircleAvatar(
                         child: Icon(Icons.wifi),
                       ),
-                      title: Text(lastScan!.ssid),
+                      title: Text(
+                        lastScan!.ssid,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       subtitle: Text(lastScan.securityTypeString),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () => context.push('/result', extra: lastScan),

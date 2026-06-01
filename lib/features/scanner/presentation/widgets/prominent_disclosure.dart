@@ -20,20 +20,25 @@ class ProminentDisclosure extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
-      content: const Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'WiFi Scanner requires your precise location data even when the app is in the foreground to discover, parse, and measure the signal strength of ambient wireless network hardware around you.',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 12),
-          Text(
-            'This data is processed locally on-device and is never shared or stored.',
-            style: TextStyle(fontWeight: FontWeight.w500),
-            textAlign: TextAlign.justify,
-          ),
-        ],
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              'WiFi Scanner requires your precise location data even when the app is in the foreground to discover, parse, and measure the signal strength of ambient wireless network hardware around you.',
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(height: 12),
+            Text(
+              'This data is processed locally on-device and is never shared or stored.',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              textAlign: TextAlign.justify,
+            ),
+          ],
+        ),
       ),
       actions: [
         TextButton(

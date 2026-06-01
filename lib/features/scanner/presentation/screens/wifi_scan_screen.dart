@@ -147,9 +147,16 @@ class _WifiScanScreenState extends State<WifiScanScreen> {
                   final ap = accessPoints[index];
                   return ListTile(
                     leading: Icon(_getWifiIcon(ap.level)),
-                    title: Text(ap.ssid.isEmpty ? '[Hidden Network]' : ap.ssid),
-                    subtitle:
-                        Text('CH: ${ap.frequency} MHz | ${ap.capabilities}'),
+                    title: Text(
+                      ap.ssid.isEmpty ? '[Hidden Network]' : ap.ssid,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    subtitle: Text(
+                      'CH: ${ap.frequency} MHz | ${ap.capabilities}',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     trailing: Text('${ap.level} dBm'),
                   );
                 },

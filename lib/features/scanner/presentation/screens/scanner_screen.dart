@@ -144,9 +144,13 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen> {
                       const Icon(Icons.error_outline,
                           color: Colors.red, size: 48),
                       const SizedBox(height: 16),
-                      Text(
-                        l10n.cameraPermissionDenied,
-                        style: const TextStyle(color: Colors.white),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Text(
+                          l10n.cameraPermissionDenied,
+                          style: const TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),

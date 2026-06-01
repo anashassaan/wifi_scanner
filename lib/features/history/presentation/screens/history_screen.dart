@@ -91,6 +91,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         title: Text(
           item.ssid,
           style: const TextStyle(fontWeight: FontWeight.bold),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         subtitle: Text(
           '${item.securityTypeString} • ${DateFormat('MMM dd, yyyy').format(item.scanDate)}',

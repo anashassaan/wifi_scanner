@@ -5,6 +5,9 @@ class ScannerOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final scanBoxSize = screenSize.width * 0.7; // 70% of screen width
+
     return Stack(
       children: [
         ColorFiltered(
@@ -23,8 +26,8 @@ class ScannerOverlay extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  width: 280,
-                  height: 280,
+                  width: scanBoxSize,
+                  height: scanBoxSize,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(32),
@@ -37,8 +40,8 @@ class ScannerOverlay extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Container(
-            width: 280,
-            height: 280,
+            width: scanBoxSize,
+            height: scanBoxSize,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Theme.of(context).colorScheme.primary,
@@ -49,7 +52,7 @@ class ScannerOverlay extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height * 0.5 + 160,
+          top: (screenSize.height * 0.5) + (scanBoxSize * 0.5) + 20,
           left: 0,
           right: 0,
           child: Center(

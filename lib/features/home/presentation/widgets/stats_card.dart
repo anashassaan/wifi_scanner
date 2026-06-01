@@ -53,7 +53,9 @@ class StatsCard extends StatelessWidget {
             children: [
               _buildStat(context, 'Total Scans', totalScans.toString()),
               const SizedBox(width: 40),
-              _buildStat(context, 'Last SSID', lastSsid),
+              Expanded(
+                child: _buildStat(context, 'Last SSID', lastSsid),
+              ),
             ],
           ),
         ],
@@ -74,6 +76,8 @@ class StatsCard extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           value,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
