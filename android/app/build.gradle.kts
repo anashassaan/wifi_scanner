@@ -29,6 +29,16 @@ android {
         versionName = flutter.versionName
     }
 
+    // 1. THIS FORCES THE RELEASE KEYSTORE AND PASSWORDS
+    signingConfigs {
+        create("release") {
+            keyAlias = "upload"
+            keyPassword = "Sweety1432"
+            storeFile = file("upload-keystore.jks") 
+            storePassword = "Sweety1432"
+        }
+    }
+
     buildTypes {
         release {
             // R8 / ProGuard Obfuscation & Shrinking for 2026 Play Store compliance
@@ -39,8 +49,8 @@ android {
                 "proguard-rules.pro"
             )
             
-            // Note: Add your own signing config for the release build.
-            signingConfig = signingConfigs.getByName("debug")
+            // 2. THIS IS THE MAGIC FIX - NOW POINTS TO "release" INSTEAD OF "debug"
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
